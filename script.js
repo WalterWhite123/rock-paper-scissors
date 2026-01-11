@@ -73,6 +73,7 @@ function playGame(){
         }
         else if (player== "paper"){
             if (robot == "rock"){
+                
                 ++humanScore;
             }
             else{
