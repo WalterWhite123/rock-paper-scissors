@@ -41,6 +41,48 @@
         return player;
     }
     //test
-    console.log(getHumanChoice());
+    //console.log(getHumanChoice());
 
+
+    let humanScore = 0;
+    let computerScore = 0;
+
+    function playRound(humanChoice,robot){
+        player = humanChoice.toLowerCase();
+
+        if (player === robot){
+            return "Tie";
+        }
+        else if (player== "rock"){
+            if (robot == "scissors"){
+                ++humanScore;
+            }
+            else{
+                ++computerScore;
+            }
+        }
+        else if (player== "paper"){
+            if (robot == "rock"){
+                ++humanScore;
+            }
+            else{
+                ++computerScore;
+            }
+        }
+        else{
+            if (robot == "paper" ){
+                ++humanScore;
+            }
+            else{
+                ++computerScore;
+            }
+        }
+    }
    
+    choixJoueur = getHumanChoice()
+    choixOrdi = getComputerChoice()
+playRound(choixJoueur,choixOrdi);
+console.log(`HumanScore : ${humanScore}
+computerScore : ${computerScore}
+choixJoueur : ${choixJoueur}
+choixOrdi : ${choixOrdi}`);
