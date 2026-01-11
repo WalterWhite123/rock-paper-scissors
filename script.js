@@ -44,9 +44,19 @@
     //console.log(getHumanChoice());
 
 
+    
+   
+//     choixJoueur = getHumanChoice()
+//     choixOrdi = getComputerChoice()
+// playRound(choixJoueur,choixOrdi);
+// console.log(`HumanScore : ${humanScore}
+// computerScore : ${computerScore}
+// choixJoueur : ${choixJoueur}
+// choixOrdi : ${choixOrdi}`);
+
+function playGame(){
     let humanScore = 0;
     let computerScore = 0;
-
     function playRound(humanChoice,robot){
         player = humanChoice.toLowerCase();
 
@@ -77,12 +87,20 @@
                 ++computerScore;
             }
         }
-    }
    
-    choixJoueur = getHumanChoice()
-    choixOrdi = getComputerChoice()
-playRound(choixJoueur,choixOrdi);
-console.log(`HumanScore : ${humanScore}
-computerScore : ${computerScore}
-choixJoueur : ${choixJoueur}
-choixOrdi : ${choixOrdi}`);
+    }
+    playRound(getHumanChoice(),getComputerChoice());
+    playRound(getHumanChoice(),getComputerChoice());
+    playRound(getHumanChoice(),getComputerChoice());
+    playRound(getHumanChoice(),getComputerChoice());
+    playRound(getHumanChoice(),getComputerChoice());
+
+ 
+    console.log(`humanScore: ${humanScore} 
+    computerScore: ${computerScore}`);
+
+
+
+}
+
+playGame();
