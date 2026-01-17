@@ -128,6 +128,7 @@ btn.addEventListener("click",function(e){
     endGame.textContent = "";
     
     let computerChoice = getComputerChoice();
+    if (e.target != e.currentTarget){ 
     playRound(e.target.textContent,computerChoice );
     //Maj de score
     scoreJoueur.textContent = `Score: ${humanScore}`;
@@ -149,8 +150,8 @@ btn.addEventListener("click",function(e){
         computerScore = 0;
     }
    
-    
-})
+    }
+});
 // La fonction callback sera playRound(le contenu du bouton appuyé e.target,la fonction du robot)
 //Mettre à jour l'affichage des scores 
 //

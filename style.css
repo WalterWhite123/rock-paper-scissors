@@ -1,18 +1,26 @@
 h1{
     text-align: center;
+    background-color: blue;
+    color: white;
+    margin:0;
 }
 
 .side{
     display: flex;
     justify-content: space-around;
     font-size: 30px;
+        background-color: grey;
+
 }
+
+
+
 .score-container{
     border:2px solid black;
     background-color: red;
     display: flex;
     justify-content: space-around;
-    margin-bottom: 25px;
+    padding: 12px 0;
 }
 
 .score-joueur,.score-ordi{
@@ -23,11 +31,14 @@ h1{
 
 
 .choix-container{
-    
+            background-color: grey;
+
     display:flex;
     justify-content: space-around;
     font-size: 20px;
     margin-bottom: 30px;
+        padding: 12px 5px;
+
 }
 
 .choix-joueur,.choix-ordi{
@@ -38,9 +49,9 @@ h1{
 
 .boutons{
     display: flex;
-    justify-content: space-evenly;
-    
-  
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
 }
 
 button{
@@ -50,3 +61,14 @@ button{
     background-color: red;
     border-radius: 12px;
 }
+
+.endGame{
+    text-align: center;
+    font-size: 25px;
+    color:black;
+    width: 100px;
+    padding: 4px 12px;
+    border-radius: 5px;
+    margin:auto;
+}
+
