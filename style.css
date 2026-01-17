@@ -34,7 +34,8 @@ h1{
             background-color: grey;
 
     display:flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    align-items: center;
     font-size: 20px;
     margin-bottom: 30px;
         padding: 12px 5px;
@@ -42,7 +43,8 @@ h1{
 }
 
 .choix-joueur,.choix-ordi{
-    padding: 4px 12px;
+            padding: 12px 5px;
+
     color:black;
     font-size:25px;
 }
