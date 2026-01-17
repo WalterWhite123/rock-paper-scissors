@@ -54,7 +54,6 @@
 // choixJoueur : ${choixJoueur}
 // choixOrdi : ${choixOrdi}`);
 
-function playGame(){
     let humanScore = 0;
     let computerScore = 0;
     function playRound(humanChoice,robot){
@@ -90,15 +89,16 @@ function playGame(){
         }
    
     }
+function playGame(){
+    const nbOfRounds = 5
+    for (let rounds = 0; rounds < nbOfRounds;rounds++){
     playRound(getHumanChoice(),getComputerChoice());
-    playRound(getHumanChoice(),getComputerChoice());
-    playRound(getHumanChoice(),getComputerChoice());
-    playRound(getHumanChoice(),getComputerChoice());
-    playRound(getHumanChoice(),getComputerChoice());
-
- 
+    console.log(`round ${rounds + 1}`);
     console.log(`humanScore: ${humanScore} 
     computerScore: ${computerScore}`);
+    }
+ 
+
 
 
 
