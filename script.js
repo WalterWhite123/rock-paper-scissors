@@ -119,28 +119,15 @@ let choixOrdi = document.querySelector(".choix-ordi");
 choixJoueur.textContent = "Waiting";
 choixOrdi.textContent = "Waiting";
 
+endGame = document.querySelector(".endGame");
+endGame.textContent = "Enjoy";
+
 let btn = document.querySelector(".boutons");
 btn.addEventListener("click",function(e){
     //Round
+    endGame.textContent = "";
     
-    if (humanScore == 5 || computerScore== 5){
-        let winner = document.createElement("div");
-        // document.querySelector(".endGame").appendChild(winner);
-        if (humanScore >= 5){
-             winner.textContent = "You win";
-        }
-        else{
-            winner.textContent = "You lost";
-        }
-        humanScore= 0;
-        computerScore = 0;
-    }
-    else{
-    
-        
-        
-        
-    let computerChoice =getComputerChoice()
+    let computerChoice = getComputerChoice();
     playRound(e.target.textContent,computerChoice );
     //Maj de score
     scoreJoueur.textContent = `Score: ${humanScore}`;
@@ -151,9 +138,18 @@ btn.addEventListener("click",function(e){
     choixJoueur.textContent = e.target.textContent;
     choixOrdi.textContent = computerChoice;
     ///
-    console.log(humanScore);
-    console.log(computerScore);
+     if (humanScore == 5 || computerScore== 5){
+        if (humanScore >= 5){
+             endGame.textContent = "You win";
+        }
+        else{
+            endGame.textContent = "You lost";
+        }
+        humanScore= 0;
+        computerScore = 0;
     }
+   
+    
 })
 // La fonction callback sera playRound(le contenu du bouton appuyé e.target,la fonction du robot)
 //Mettre à jour l'affichage des scores 
