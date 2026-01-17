@@ -1,0 +1,52 @@
+h1{
+    text-align: center;
+}
+
+.side{
+    display: flex;
+    justify-content: space-around;
+    font-size: 30px;
+}
+.score-container{
+    border:2px solid black;
+    background-color: red;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 25px;
+}
+
+.score-joueur,.score-ordi{
+    font-size: 30px;
+    font-weight: bold;
+    
+}
+
+
+.choix-container{
+    
+    display:flex;
+    justify-content: space-around;
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.choix-joueur,.choix-ordi{
+    padding: 4px 12px;
+    color:black;
+    font-size:25px;
+}
+
+.boutons{
+    display: flex;
+    justify-content: space-evenly;
+    
+  
+}
+
+button{
+    padding: 6px 13px;
+    font-size:20px ;
+    color:white;
+    background-color: red;
+    border-radius: 12px;
+}

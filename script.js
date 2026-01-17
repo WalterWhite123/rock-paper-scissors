@@ -4,7 +4,7 @@
     //Give a random number between 0 and 2
     function randomNumber(){
         let randomNumber = Math.random()*2;
-        let randomNumberRounded = Math.round(randomNumber);
+        let randomNumberRounded = Math.floor(randomNumber);
         return randomNumberRounded;
     }
     
@@ -26,7 +26,7 @@
     }
 
     //Test
-    console.log(getComputerChoice());
+// \
 
     
 
@@ -57,6 +57,9 @@
     let humanScore = 0;
     let computerScore = 0;
     function playRound(humanChoice,robot){
+        console.log(`Player: ${humanChoice}`);
+        console.log(`Robot: ${robot}`);
+        
         player = humanChoice.toLowerCase();
 
         if (player === robot){
@@ -89,19 +92,51 @@
         }
    
     }
-function playGame(){
-    const nbOfRounds = 5
-    for (let rounds = 0; rounds < nbOfRounds;rounds++){
-    playRound(getHumanChoice(),getComputerChoice());
-    console.log(`round ${rounds + 1}`);
-    console.log(`humanScore: ${humanScore} 
-    computerScore: ${computerScore}`);
-    }
- 
+// function playGame(){
+//     const nbOfRounds = 5
+//     // for (let rounds = 0; rounds < nbOfRounds;rounds++){
+//     // playRound(getHumanChoice(),getComputerChoice());
+//     // console.log(`round ${rounds + 1}`);
+//     // console.log(`humanScore: ${humanScore} 
+//     // computerScore: ${computerScore}`);
+//     // }
 
 
 
 
-}
+// }
 
-playGame();
+let scoreJoueur = document.querySelector(".score-joueur");
+let scoreOrdi = document.querySelector(".score-ordi");
+
+scoreJoueur.textContent = `Score: ${humanScore}`;
+scoreOrdi.textContent = `Score: ${computerScore}`;
+
+
+let choixJoueur = document.querySelector(".choix-joueur");
+let choixOrdi = document.querySelector(".choix-ordi");
+
+choixJoueur.textContent = "Waiting";
+choixOrdi.textContent = "Waiting";
+
+let btn = document.querySelector(".boutons");
+btn.addEventListener("click",function(e){
+    //Round
+    let computerChoice =getComputerChoice()
+    playRound(e.target.textContent,computerChoice );
+    //Maj de score
+    scoreJoueur.textContent = `Score: ${humanScore}`;
+    scoreOrdi.textContent = `Score: ${computerScore}`;
+
+    ///Afficher ce qui a été jouer 
+
+    choixJoueur.textContent = e.target.textContent;
+    choixOrdi.textContent = computerChoice;
+    ///
+    console.log(humanScore);
+    console.log(computerScore);
+
+})
+// La fonction callback sera playRound(le contenu du bouton appuyé e.target,la fonction du robot)
+//Mettre à jour l'affichage des scores 
+//
