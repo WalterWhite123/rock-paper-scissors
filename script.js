@@ -3,7 +3,7 @@
     
     //Give a random number between 0 and 2
     function randomNumber(){
-        let randomNumber = Math.random()*2;
+        let randomNumber = Math.random()*3;
         let randomNumberRounded = Math.floor(randomNumber);
         return randomNumberRounded;
     }
@@ -122,6 +122,24 @@ choixOrdi.textContent = "Waiting";
 let btn = document.querySelector(".boutons");
 btn.addEventListener("click",function(e){
     //Round
+    
+    if (humanScore == 5 || computerScore== 5){
+        let winner = document.createElement("div");
+        // document.querySelector(".endGame").appendChild(winner);
+        if (humanScore >= 5){
+             winner.textContent = "You win";
+        }
+        else{
+            winner.textContent = "You lost";
+        }
+        humanScore= 0;
+        computerScore = 0;
+    }
+    else{
+    
+        
+        
+        
     let computerChoice =getComputerChoice()
     playRound(e.target.textContent,computerChoice );
     //Maj de score
@@ -135,7 +153,7 @@ btn.addEventListener("click",function(e){
     ///
     console.log(humanScore);
     console.log(computerScore);
-
+    }
 })
 // La fonction callback sera playRound(le contenu du bouton appuyé e.target,la fonction du robot)
 //Mettre à jour l'affichage des scores 
